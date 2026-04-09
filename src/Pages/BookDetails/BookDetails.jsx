@@ -25,10 +25,8 @@ const BookDetails = () => {
     tags,
   } = expectedBook;
 
-  const {handleMarkAsRead} = useContext(BookContext);
+  const { handleMarkAsRead, handleWishLead } = useContext(BookContext);
   console.log("Book Context", handleMarkAsRead);
-
- 
 
   return (
     <div className="my-10">
@@ -71,7 +69,12 @@ const BookDetails = () => {
               >
                 Mark as Read
               </button>
-              <button className="btn btn-soft btn-info">Add to Wishlist</button>
+              <button
+                onClick={() => handleWishLead(expectedBook)}
+                className="btn btn-soft btn-info"
+              >
+                Add to Wishlist
+              </button>
             </div>
           </div>
         </div>
